@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mega-helper"
+version = "0.1.0"
+description = "This tool helps users test and deploy configuration of Custom Export extension (MEGA) of Rossum."
+authors = ["Ondrej Polesny <ondrej.polesny@rossum.ai>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jinja2 = "^3.1.4"
+requests = "^2.32.3"
+
+[tool.poetry.scripts]
+mega-helper = "mega_helper.main:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
