@@ -23,7 +23,7 @@ poetry run mega-helper -p -t template.json -l data.json
 
 Process template using data from Rossum API:
 ```
-poetry run mega-helper -p -t template.json -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}
+poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}
 poetry run mega-helper -p -t template.json -a 123456 -o 123456 -u https://your-org.rossum.app/api/v1 -n 4ccf1d11a42070e70c132f2678076b412489339f 
 ```
 
@@ -35,6 +35,15 @@ Generate configuration of the Custom Payload Format extension using the Jinja2 t
 ```
 poetry run mega-helper -g -t template.json -k json
 ```
+
+## Typical usage (tell it to me like I'm a 6yo)
+* Clone this repo `git clone https://github.com/rossumai/mega-helper`
+* Install it `pipx install .`
+* Add your template to the root
+* Note `annotation ID`, `hook ID`, `base URL` and `auth token` and use run this: `poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}`
+* Keep editing the template until it's ready
+* When the template is ready, run this: `poetry run mega-helper -g -t {template file path} -k {export reference key}`
+* Copy the configuration from stdout to MEGA extension config
 
 # Full list of parameters
 |param|description|
