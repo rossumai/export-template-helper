@@ -40,7 +40,7 @@ poetry run mega-helper -g -t template.json -k json
 * Clone this repo `git clone https://github.com/rossumai/mega-helper`
 * Install it `pipx install .`
 * Add your template to the root
-* Note `annotation ID`, `hook ID`, `base URL` and `auth token` and use run this: `poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}`
+* Note `annotation ID`, `hook ID`, `base URL` and `auth token` and run this: `poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}`
 * Keep editing the template until it's ready
 * When the template is ready, run this: `poetry run mega-helper -g -t {template file path} -k {export reference key}`
 * Copy the configuration from stdout to MEGA extension config
