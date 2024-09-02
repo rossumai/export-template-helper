@@ -1,6 +1,6 @@
 import argparse
 
-from mega_helper.commands import generate_settings, process
+from mega_helper.commands import generator, processor
 
 def main():
     parser = argparse.ArgumentParser(description="Process Jinja2 template with Rossum annotation payload and generate extension config.")
@@ -23,14 +23,14 @@ def main():
             raise Exception("Template path missing")
         if not args.payloadPath and (not args.annotationId or not args.token or not args.hookId or not args.url):
             raise Exception("Payload path or annotationId, hookId, base URL and token missing")
-        process(args.templatePath, args.payloadPath, args.annotationId, args.token, args.hookId, args.url)
+        processor.process_template(args.templatePath, args.payloadPath, args.annotationId, args.token, args.hookId, args.url)
 
     elif (args.generate):
         if not args.templatePath:
             raise Exception("Template path missing")
         if not args.key:
             raise Exception("Export reference key missing")
-        generate_settings(args.templatePath, args.key)
+        generator.generate_settings(args.templatePath, args.key)
     
     else:
         raise Exception("Command missing")
