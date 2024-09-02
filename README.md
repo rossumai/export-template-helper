@@ -1,6 +1,5 @@
-# MEGA helper
-This command line tool is used to process Jinja2 templates using Rossum annotation payload and to generate settings of the MEGA extension.
-MEGA is an internal name for Custom Format Payload extension.
+# Export template helper
+This command line tool is used to process Jinja2 templates using Rossum annotation payload and to generate settings of the Custom Export Pipeline extension.
 
 # Installation guide
 ```
@@ -29,8 +28,8 @@ poetry run mega-helper -p -t template.json -a 123456 -o 123456 -u https://your-o
 
 In case of a local file, the full annotation payload as Rossum generates it is expected.
 
-## Generate MEGA settings
-Generate configuration of the Custom Payload Format extension using the Jinja2 template and reference key:
+## Generate extension settings
+Generate configuration of the Custom Export Pipeline extension using the Jinja2 template and reference key:
 
 ```
 poetry run mega-helper -g -t template.json -k json
@@ -43,7 +42,7 @@ poetry run mega-helper -g -t template.json -k json
 * Note `annotation ID`, `hook ID`, `base URL` and `auth token` and run this: `poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}`
 * Keep editing the template until it's ready
 * When the template is ready, run this: `poetry run mega-helper -g -t {template file path} -k {export reference key}`
-* Copy the configuration from stdout to MEGA extension config
+* Copy the configuration from stdout to extension config
 
 # Full list of parameters
 |param|description|
