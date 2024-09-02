@@ -1,7 +1,7 @@
 import json
 from jinja2 import FileSystemLoader, Environment
 import requests
-from mega_helper.helpers.payload_transformer import build_context_dict
+from export_template_helper.helpers.payload_transformer import build_context_dict
 
 def process_template(templatePath, payloadPath, annotationId, token, hookId, url):
     env = Environment(

@@ -1,12 +1,12 @@
 import argparse
 
-from mega_helper.commands import generator, processor
+from export_template_helper.commands import generator, processor
 
 def main():
     parser = argparse.ArgumentParser(description="Process Jinja2 template with Rossum annotation payload and generate extension config.")
     group = parser.add_mutually_exclusive_group()
     group.add_argument("-p", "--process", help="process a local Jinja2 template with Rossum annotation payload", action="store_true"),
-    group.add_argument("-g", "--generate", help="generate MEGA extension configuration using a local Jinja2 template", action="store_true")
+    group.add_argument("-g", "--generate", help="generate Custom Export Pipeline extension configuration using a local Jinja2 template", action="store_true")
     parser.add_argument("-t", "--templatePath", help="path to local Jinja2 template", type=str)
     group = parser.add_mutually_exclusive_group()
     group.add_argument("-l", "--payloadPath", help="path to local file with Rossum annotation payload", type=str)

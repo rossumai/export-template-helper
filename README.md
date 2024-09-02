@@ -16,14 +16,14 @@ Locally process Jinja2 template using annotation payload either from local file 
 
 Process template using locally stored payload:
 ```
-poetry run mega-helper -p -t {template file path} -l {payload file path}
-poetry run mega-helper -p -t template.json -l data.json
+poetry run export-template-helper -p -t {template file path} -l {payload file path}
+poetry run export-template-helper -p -t template.json -l data.json
 ```
 
 Process template using data from Rossum API:
 ```
-poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}
-poetry run mega-helper -p -t template.json -a 123456 -o 123456 -u https://your-org.rossum.app/api/v1 -n 4ccf1d11a42070e70c132f2678076b412489339f 
+poetry run export-template-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}
+poetry run export-template-helper -p -t template.json -a 123456 -o 123456 -u https://your-org.rossum.app/api/v1 -n 4ccf1d11a42070e70c132f2678076b412489339f 
 ```
 
 In case of a local file, the full annotation payload as Rossum generates it is expected.
@@ -32,23 +32,23 @@ In case of a local file, the full annotation payload as Rossum generates it is e
 Generate configuration of the Custom Export Pipeline extension using the Jinja2 template and reference key:
 
 ```
-poetry run mega-helper -g -t template.json -k json
+poetry run export-template-helper -g -t template.json -k json
 ```
 
 ## Typical usage (tell it to me like I'm a 6yo)
-* Clone this repo `git clone https://github.com/rossumai/mega-helper`
+* Clone this repo `git clone https://github.com/rossumai/export-template-helper`
 * Install it `pipx install .`
 * Add your template to the root
-* Note `annotation ID`, `hook ID`, `base URL` and `auth token` and run this: `poetry run mega-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}`
+* Note `annotation ID`, `hook ID`, `base URL` and `auth token` and run this: `poetry run export-template-helper -p -t {template file path} -a {annotationId} -o {hookId} -u {baseUrl} -n {authToken}`
 * Keep editing the template until it's ready
-* When the template is ready, run this: `poetry run mega-helper -g -t {template file path} -k {export reference key}`
+* When the template is ready, run this: `poetry run export-template-helper -g -t {template file path} -k {export reference key}`
 * Copy the configuration from stdout to extension config
 
 # Full list of parameters
 |param|description|
 |--|--|
 |`-p --process`|process a local Jinja2 template with Rossum annotation payload|
-|`-g --generate`|generate MEGA extension configuration using a local Jinja2 template|
+|`-g --generate`|generate Custom Export Pipeline extension configuration using a local Jinja2 template|
 |`-t --templatePath`|path to local Jinja2 template|
 |`-l --payloadPath`|path to local file with Rossum annotation payload|
 |`-a --annotationId`|annotation ID to fetch payload from Rossum API|
