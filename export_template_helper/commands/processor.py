@@ -24,7 +24,7 @@ def render_template(templatePath, payloadPath, annotationId, token, hookId, url)
         r = requests.post(f"{url}/hooks/{hookId}/generate_payload", data=api_payload, headers={"Authorization": f"Bearer {token}"})
         payload = r.json()
     else:
-        raise Exception("Payload missing")
+        raise Exception("Unable to fetch payload, arguments missing")
         
     data = build_context_dict(payload["annotation"])
     print(template.render({"field": data, "payload": payload}))
