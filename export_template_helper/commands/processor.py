@@ -3,7 +3,7 @@ from jinja2 import FileSystemLoader, Environment
 import requests
 from export_template_helper.helpers.payload_transformer import build_context_dict
 
-def process_template(templatePath, payloadPath, annotationId, token, hookId, url):
+def render_template(templatePath, payloadPath, annotationId, token, hookId, url):
     env = Environment(
         loader=FileSystemLoader(".")
     )

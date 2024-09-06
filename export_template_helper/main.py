@@ -23,7 +23,7 @@ def main():
             raise Exception("Template path missing")
         if not args.payloadPath and (not args.annotationId or not args.token or not args.hookId or not args.url):
             raise Exception("Payload path or annotationId, hookId, base URL and token missing")
-        processor.process_template(args.templatePath, args.payloadPath, args.annotationId, args.token, args.hookId, args.url)
+        processor.render_template(args.templatePath, args.payloadPath, args.annotationId, args.token, args.hookId, args.url)
 
     elif (args.generate):
         if not args.templatePath:
