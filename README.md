@@ -55,11 +55,16 @@ poetry run export-template-helper -p -t template.json -o 123456 -u https://your-
 * Copy the configuration from stdout to extension config
 
 # Full list of parameters
+## Commands
 |param|description|
 |--|--|
 |`-r --render`|render a local Jinja2 template with Rossum annotation payload|
 |`-g --generate`|generate Custom Export Pipeline extension configuration using a local Jinja2 template|
 |`-p --parse`|parse Jinja2 template from hook settings into local file|
+
+## Parameters
+|param|description|
+|--|--|
 |`-t --templatePath`|path to local Jinja2 template|
 |`-l --payloadPath`|path to local file with Rossum annotation payload|
 |`-a --annotationId`|annotation ID to fetch payload from Rossum API|
